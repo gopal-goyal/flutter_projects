@@ -24,3 +24,7 @@ flutter:
   assets:
     - assets/
 
+  fonts:
+    - family: ArchitectsDaughter
+      fonts:
+        - asset: assets/fonts/ArchitectsDaughter-Regular.ttf
