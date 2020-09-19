@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
-
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  var time = DateTime.now();
+  void updateTime(){
+    time = DateTime.now();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -83,6 +94,26 @@ class MyApp extends StatelessWidget {
                     ) ,
                   ),
                 ),
+                SizedBox(
+                  height: 20.0,
+                  width: 150.0,
+                  ),
+                FlatButton(
+                  onPressed: (){
+                    setState(() {
+                      updateTime();
+                    });
+                    print('its working if the time updates');
+                  },
+                  child: Text(
+                      '$time',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                )
               ],
             ),
           ),
@@ -90,4 +121,5 @@ class MyApp extends StatelessWidget {
       ),);
   }
 }
+
 

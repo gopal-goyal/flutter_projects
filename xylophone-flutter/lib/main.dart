@@ -14,7 +14,7 @@ void main() => runApp(
               fontWeight: FontWeight.bold,
               fontSize: 30.0,
               color: Colors.teal.shade700,
-              fontFamily: 'ArchitectsDaughter'
+              fontFamily: 'ArchitectsDaughter',
             ),
           ),
         ),
