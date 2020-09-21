@@ -19,6 +19,7 @@ class Quizzler extends StatelessWidget {
             child: Text(
               'Quiz App',
               style: TextStyle(
+                letterSpacing: 3.5,
                 color: Colors.white,
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold,
