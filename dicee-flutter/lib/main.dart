@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 void main() {
   return runApp(
@@ -8,9 +9,16 @@ void main() {
         backgroundColor: Colors.redAccent,
         appBar: AppBar(
           title: Center(
-            child: Text('Dicee'),
+            child: Text(
+              'Dice',
+              style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.redAccent,
+              ),
+            ),
           ),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.blueGrey,
         ),
         body: DicePage(),
       ),
@@ -29,34 +37,34 @@ class _DicePageState extends State<DicePage> {
 
   void changeDiceFace() {
     setState(
-          () {
+      () {
         leftDiceNumber = Random().nextInt(6) + 1;
         rightDiceNumber = Random().nextInt(6) + 1;
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Row(
         children: <Widget>[
-          Expanded(
-            child: FlatButton(
-              onPressed: () {
-                changeDiceFace();
-              },
-              child: Image.asset('images/dice$leftDiceNumber.png'),
-            ),
-          ),
-          Expanded(
-            child: FlatButton(
-              onPressed: () {
-                changeDiceFace();
-              },
-              child: Image.asset('images/dice$rightDiceNumber.png'),
-            ),
-          ),
+          diceButton(leftDiceNumber),
+          diceButton(rightDiceNumber),
         ],
+      ),
+    );
+  }
+
+  Expanded diceButton(int number) {
+    return Expanded(
+      child: FlatButton(
+        onPressed: () {
+          changeDiceFace();
+          final player = AudioCache();
+          player.play('rolldice.mp3');
+        },
+        child: Image.asset('assets/images/dice$number.png'),
       ),
     );
   }
