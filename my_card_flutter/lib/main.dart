@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+
 void main() {
   runApp(MyApp());
 }
-
 
 class MyApp extends StatefulWidget {
   @override
@@ -10,9 +10,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   var time = DateTime.now();
-  void updateTime(){
+  void updateTime() {
     time = DateTime.now();
   }
 
@@ -29,7 +28,6 @@ class _MyAppState extends State<MyApp> {
                 CircleAvatar(
                   radius: 50.0,
                   backgroundImage: AssetImage('assets/images/profilepic.jpg'),
-
                 ),
                 Text(
                   'Gopal Goyal',
@@ -38,7 +36,8 @@ class _MyAppState extends State<MyApp> {
                     fontSize: 40.0,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                  ),),
+                  ),
+                ),
                 SizedBox(
                   height: 5.0,
                 ),
@@ -50,7 +49,8 @@ class _MyAppState extends State<MyApp> {
                     fontSize: 20.0,
                     letterSpacing: 2.5,
                     fontWeight: FontWeight.bold,
-                  ),),
+                  ),
+                ),
                 SizedBox(
                   height: 20.0,
                   width: 150.0,
@@ -60,7 +60,8 @@ class _MyAppState extends State<MyApp> {
                 ),
                 Card(
                   color: Colors.white,
-                  margin: EdgeInsets.symmetric(vertical: 10.0 , horizontal: 25.0),
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                   child: ListTile(
                     leading: Icon(
                       Icons.phone_android,
@@ -78,7 +79,8 @@ class _MyAppState extends State<MyApp> {
                 ),
                 Card(
                   color: Colors.white,
-                  margin: EdgeInsets.symmetric(vertical: 10.0 , horizontal: 25.0),
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                   child: ListTile(
                     leading: Icon(
                       Icons.email,
@@ -91,22 +93,22 @@ class _MyAppState extends State<MyApp> {
                         color: Colors.teal.shade900,
                         fontSize: 20.0,
                       ),
-                    ) ,
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 20.0,
                   width: 150.0,
-                  ),
+                ),
                 FlatButton(
-                  onPressed: (){
+                  onPressed: () {
                     setState(() {
                       updateTime();
                     });
                     print('its working if the time updates');
                   },
                   child: Text(
-                      '$time',
+                    '$time',
                     style: TextStyle(
                       color: Colors.black54,
                       fontWeight: FontWeight.bold,
@@ -118,8 +120,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
         ),
-      ),);
+      ),
+    );
   }
 }
-
-
